@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Navbar from './components/Navbar'
+import Home from './components/sections/Home'
+import About from './components/sections/About'
 import './App.css'
-import Profile from './Profile'
-function App() {
 
+function App() {
   return (
     <>
-      <Profile/>
+      <Navbar />
+      <Home />
+      <About />
     </>
   )
 }
