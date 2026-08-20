@@ -6,7 +6,7 @@ import MoreLink from '../ui/MoreLink';
 import { media } from '../../data/portfolio';
 
 const Experience = () => {
-  const [activeExperience, setActiveExperience] = useState<number | null>(null);
+  const [activeExperience, setActiveExperience] = useState<number | null>(0);
   const current = experience[activeExperience ?? 0];
   const currentIndex = activeExperience ?? 0;
 
