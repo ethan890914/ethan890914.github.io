@@ -113,6 +113,36 @@ export const experience = [
 
 export const projects = [
   {
+    title: 'RA-ProAgent: Retrieval-Augmented Agentic Process Automation',
+    subtitle: 'Open-Source Framework Extension',
+    date: '2025',
+    year: '2025',
+    month: '',
+    day: '01',
+    period: '2025',
+    category: 'PROJECT' as const,
+    github: 'https://github.com/ethan890914/RA-ProAgent',
+    description: [
+      'Extended the open-source ProAgent framework with a RAG pipeline, task/query library, and semantic retrieval layer that feeds similar prior workflows as one-shot context into an LLM for automated workflow construction.',
+      'Implemented multiple execution modes enabling the agent to dynamically adapt n8n automation workflows based on semantic similarity of user queries, improving construction accuracy on unseen tasks.',
+    ],
+  },
+  {
+    title: 'Fair-SLoRA: Scalable LLM Fine-Tuning Pipeline',
+    subtitle: 'Large-Scale Systems Research',
+    date: '2025',
+    year: '2025',
+    month: '',
+    day: '01',
+    period: '2025',
+    category: 'PROJECT' as const,
+    github: 'https://github.com/ethan890914/Fair-SLoRA',
+    description: [
+      'Designed a skew-aware scheduling framework with a sliding-window popularity detector that dynamically merges the dominant adapter into base weights, routing popular requests through a fused forward path and unpopular ones through lightweight correction layers.',
+      'Benchmarked on NYU’s HPC against baseline S-LoRA, demonstrating measurable throughput improvement under skewed adapter-request distributions.',
+    ],
+  },
+  {
     title: 'Steam Games Trending Analysis',
     subtitle: '',
     date: '2024',
@@ -121,6 +151,7 @@ export const projects = [
     day: '15',
     period: '2024 Mar',
     category: 'PROJECT' as const,
+    github: '',
     description: [
       'Collected and analyzed trending data of top Steam games using Pytrend and Google Trends API to identify player interest patterns across 20,000+ records.',
       'Executed ETL processes on a 15GB dataset using Spark, uncovering factors influencing game popularity through integrated team findings.',
@@ -135,6 +166,7 @@ export const projects = [
     day: '01',
     period: '2022 Sep – 2023 Jun',
     category: 'RESEARCH' as const,
+    github: '',
     description: [
       'Researched state-of-the-art techniques in face anti-spoofing fields, focusing on improving generalization across unseen attacks.',
       'Assisted in experiments of Domain-Generalized Face Anti-Spoofing with Unknown Attacks, ICIP 2023.',
@@ -150,6 +182,7 @@ export const projects = [
     day: '01',
     period: '2022 Jan – 2023 Jun',
     category: 'RESEARCH' as const,
+    github: '',
     description: [
       'Developed a two-stage open vocabulary segmentation framework achieving an Average Precision score of 12.33 on the COCO dataset.',
       'Analyzed state-of-the-art techniques in open vocabulary segmentation fields.',
@@ -164,11 +197,12 @@ export const projects = [
     month: 'May',
     day: '20',
     period: '2022 May',
-    category: 'PROJECT' as const,
+    category: 'COMPETITION' as const,
+    github: '',
     description: [
       'Led a winning team (1st place) in the Legal-Tech Hackathon, developing a Chrome extension for Lawsnote to provide similar case judgments, enhancing decision-making.',
     ],
   },
 ];
 
-export type CategoryTag = 'WORK' | 'PROJECT' | 'RESEARCH' | 'EDUCATION';
+export type CategoryTag = 'WORK' | 'PROJECT' | 'RESEARCH' | 'COMPETITION' | 'EDUCATION';

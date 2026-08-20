@@ -14,6 +14,7 @@ const categoryColors: Record<CategoryTag, string> = {
   WORK: 'tag-work',
   PROJECT: 'tag-project',
   RESEARCH: 'tag-research',
+  COMPETITION: 'tag-competition',
   EDUCATION: 'tag-education',
 };
 

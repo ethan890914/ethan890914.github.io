@@ -53,6 +53,16 @@ const Projects = () => {
                     <p className="p-projects__showcase-sub font-eng">{current.subtitle}</p>
                   )}
                   <p className="p-projects__showcase-period font-eng">{current.period}</p>
+                  {current.github && (
+                    <a
+                      className="p-projects__github font-eng"
+                      href={current.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View on GitHub ↗
+                    </a>
+                  )}
                   <ul className="p-projects__showcase-list">
                     {current.description.map((desc, i) => (
                       <li key={i}>{desc}</li>

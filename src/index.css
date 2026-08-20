@@ -232,7 +232,7 @@ body {
 /* ── Nav ── */
 .l-nav {
   position: fixed;
-  top: 43px;
+  top: 58px;
   right: 40px;
   z-index: 50;
   transition: color 0.4s var(--ease-out);
@@ -288,12 +288,48 @@ body {
   opacity: 0.4;
 }
 
+.l-theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 40px;
+  z-index: 55;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 9px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-black);
+  font-family: var(--font-eng);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.3s var(--ease-out), color 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
+}
+
+.l-theme-toggle.on-hero {
+  color: var(--color-white);
+}
+
+.l-theme-toggle:hover {
+  opacity: 1;
+}
+
 @media (max-width: 1000px) {
   .l-nav__list {
     gap: 12px;
   }
   .l-nav__link {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 850px) {
+  .l-theme-toggle {
+    top: 18px;
+    right: 66px;
   }
 }
 
@@ -827,6 +863,7 @@ body {
 .tag-work { color: var(--color-blue); }
 .tag-project { color: var(--color-purple); }
 .tag-research { color: var(--color-green); }
+.tag-competition { color: var(--color-orange); }
 .tag-education { color: var(--color-pink); }
 
 /* ── Featured media ── */
@@ -924,6 +961,49 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Theme overrides ── */
+.theme-dark {
+  --theme-color: #2d2521;
+  --color-brown: #d3b8a8;
+  --color-gray: #403a36;
+  --color-gray-dark: #aaa09a;
+  --color-black: #f4efeb;
+}
+
+.theme-dark .l-content,
+.theme-dark .l-page {
+  background: #12100f;
+  color: var(--color-black);
+}
+
+.theme-dark .l-logo:not(.on-hero),
+.theme-dark .l-nav:not(.on-hero),
+.theme-dark .l-menu__nav-link,
+.theme-dark .c-more__text,
+.theme-dark .c-more__arrow {
+  color: var(--color-black);
+}
+
+.theme-dark .l-menu {
+  background: #12100f;
+}
+
+.theme-dark .l-section--sidebar::after {
+  background: linear-gradient(to bottom, rgba(18, 16, 15, 0.98), rgba(18, 16, 15, 0.9));
+}
+
+.theme-dark .l-sns__link img {
+  filter: invert(1) grayscale(1);
+}
+
+.theme-dark .p-projects__showcase {
+  background: #2d2521;
+}
+
+.theme-dark .p-exp-detail {
+  background: rgba(211, 184, 168, 0.08);
+}
+
 /* ── Projects showcase ── */
 .p-projects {
   padding-bottom: 40px;
@@ -1008,6 +1088,22 @@ body {
   font-size: 14px;
   letter-spacing: 0.06em;
   opacity: 0.7;
+}
+
+.p-projects__github {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: inherit;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  opacity: 0.8;
+  transition: opacity 0.3s var(--ease-out);
+}
+
+.p-projects__github:hover {
+  opacity: 1;
 }
 
 .p-projects__showcase-list {

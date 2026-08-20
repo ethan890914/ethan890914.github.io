@@ -10,7 +10,7 @@ const Home = () => (
           Portfolio
         </p>
         <h1 className="p-hero__title font-eng reveal-mask" style={{ '--reveal-delay': '0.5s' } as React.CSSProperties}>
-          {profile.name}
+          Yi-Han (Ethan) Ding
         </h1>
         <p className="p-hero__role font-eng reveal-item" style={{ '--reveal-delay': '0.8s' } as React.CSSProperties}>
           {profile.title}

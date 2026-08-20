@@ -12,7 +12,12 @@ const navLinks = [
   { name: "Contact", path: "/contact" },
 ];
 
-const Navbar = () => {
+type NavbarProps = {
+  isDarkMode: boolean;
+  onToggleTheme: () => void;
+};
+
+const Navbar = ({ isDarkMode, onToggleTheme }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isHero = location.pathname === "/";
@@ -51,6 +56,17 @@ const Navbar = () => {
           ))}
         </ul>
       </nav>
+
+      <button
+        type="button"
+        className={`l-theme-toggle ${isHero ? "on-hero" : ""}`}
+        onClick={onToggleTheme}
+        aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+        aria-pressed={isDarkMode}
+      >
+        <span aria-hidden="true">{isDarkMode ? "☼" : "☾"}</span>
+        <span>{isDarkMode ? "Light" : "Dark"}</span>
+      </button>
 
       <aside className={`l-sns hidden md:block ${isHero ? "on-hero" : ""}`}>
         <ul className="l-sns__list">
