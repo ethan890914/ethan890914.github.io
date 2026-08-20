@@ -1,34 +1,64 @@
-const About = () => {
-  return (
-    <section
-      id="about"
-      className="min-h-screen relative overflow-hidden pt-16 md:pt-20"
-    >
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50 -z-10"></div>
-      
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
-      </div>
+import PageShell from '../PageShell';
+import { education, skills } from '../../data/portfolio';
 
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex items-center justify-center min-h-screen">
-        <div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">
-            About Me
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            This is a temporary layout for the About section. 
-            We'll implement the full content and design later.
-          </p>
+const About = () => (
+  <PageShell>
+    <section className="l-section">
+      <div className="l-section__sidebar" aria-hidden="true" />
+      <div className="l-inner">
+        <div className="p-about">
+          <h2 className="l-section__title font-eng reveal-mask">About</h2>
+
+          <div className="p-about__content">
+            <div className="p-about__intro reveal-item" style={{ '--reveal-delay': '0.4s' } as React.CSSProperties}>
+              <p className="p-about__text">
+                I'm a software engineer focused on full-stack development and AI-powered
+                applications. I enjoy building products that are both technically robust and
+                thoughtfully designed — from production features at startups to research in
+                computer vision and machine learning.
+              </p>
+            </div>
+
+            <div
+              className="p-about__block reveal-item"
+              style={{ '--reveal-delay': '0.55s' } as React.CSSProperties}
+            >
+              <h3 className="p-about__heading font-eng">Education</h3>
+              <ul className="p-about__list">
+                {education.map((edu) => (
+                  <li key={edu.school} className="p-about__list-item">
+                    <div className="p-about__list-head">
+                      <span className="p-about__list-title">{edu.school}</span>
+                      <span className="p-about__list-date font-eng">{edu.date}</span>
+                    </div>
+                    <p className="p-about__list-sub">
+                      {edu.degree} · {edu.location}
+                    </p>
+                    {edu.coursework && <p className="p-about__list-detail">{edu.coursework}</p>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div
+              className="p-about__block reveal-item"
+              style={{ '--reveal-delay': '0.7s' } as React.CSSProperties}
+            >
+              <h3 className="p-about__heading font-eng">Skills</h3>
+              <div className="p-about__skills">
+                {skills.map((skill) => (
+                  <div key={skill.category} className="p-about__skill">
+                    <span className="p-about__skill-cat font-eng">{skill.category}</span>
+                    <span className="p-about__skill-items">{skill.items}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-};
+  </PageShell>
+);
 
 export default About;
-
